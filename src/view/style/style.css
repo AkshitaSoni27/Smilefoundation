@@ -1,0 +1,190 @@
+.logo{
+    width: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
+.d-flex{
+    position: relative;
+    left: 35%;
+}
+.nav-content{
+    height: 100px;
+    position: relative;
+    left: 25%;
+    top: 25px;
+    font-size: 24px;
+}
+
+.aboutimg{
+    padding: 5%;
+}
+
+.aboutheading{
+   margin-top: 10%;
+   text-align: center;                    
+}
+.abouttext{
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+.donate-heading{
+    margin-top: 5%;
+    text-align: center;   
+}
+.impactheading{
+    text-align: center;
+}
+.impact-img{
+    opacity: .7;
+}
+
+.pro-heading{
+    text-align: center;
+    padding: 4%;
+}
+.program-img{
+    width: 150px;
+    height: 130px;  
+
+}
+.pro-box{
+    position: relative;
+    right:8%;
+    padding: 5px;
+    
+    
+}
+.pro-para{
+    font-size: 20px;
+}
+.goals-heading{
+     text-align: center;
+     position: relative;
+  
+}
+
+.goals-head{
+    text-align: center;
+    
+}
+.goals-box{
+     position: relative;
+     left: 10%;
+     padding: 10px;
+} 
+.goals-box:hover{
+    transform: scale(1.1);
+}
+/*cause*/
+.cause-head{
+    text-align: center;
+    padding: 5%;
+}
+.cause-img {
+    width: 330px;
+    height:450px;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.5s;
+   
+}
+.cause-img:hover{
+    background: #76c04d;
+    transform: scale(1.1);
+}
+.cause-box{
+    width: 250px;
+    height: 800px;
+    padding-right: 30px;
+}
+.cause-heading{
+    font-size: 35px;
+}
+.cause-para{
+    font-size: 20px;
+}
+
+/*partners in change*/
+.partner-heading{
+    text-align: center; 
+    position: relative;
+    /* bottom:20px; */
+    
+}
+.partner-img{
+    width: 100px;
+    height: 60px;
+    background-color: #b2d3d1;
+    
+
+}
+.partner-box{
+    background-color:#b2d3d1;
+}
+ 
+.award-box{
+    background-color: #debeaf;
+   
+} 
+.smile-head{
+    text-align: center;
+  padding-top: 4%;
+}
+.award-img{
+    width: 550px;
+    height:400px;
+}
+.award-heading{
+    text-align: right;
+    color: black;
+    position: relative;
+    bottom:90px;
+    left:10%;
+}
+.award-para{
+    font-size: 20px; 
+    position: relative;
+    bottom:80px;
+    left:10%;
+    text-align: right;
+ 
+}
+.certified-head{
+     text-align: center;
+     padding: 5%;
+}
+
+.certified-img{
+    height: 300px;
+}
+.certified-heading{
+    position: relative;
+    padding: 5px;
+    font-size: 30px;
+}
+.certified-para{
+    font-size: 20px;
+}
+
+.donatiors-img{
+    height:270px;
+
+}
+.donar-box{
+    background-color: #b2d3d1;
+}
+.donar-box:hover{transform: scale(1.1);}
+.contact-footer{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(36, 34, 34);
+}
+
+.img-thumbnail:hover{
+    transform: scale(1.1);
+    background-color: #76c04d;} 
+
