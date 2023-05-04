@@ -86,7 +86,7 @@ image.map(function(d)
       </Form.Group>
       
       <Button variant="primary" onClick={submitregister}>
-        Submit
+       Register
       </Button>
     </Form>
         </Col>

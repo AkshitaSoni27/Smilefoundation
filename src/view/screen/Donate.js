@@ -1,9 +1,16 @@
 import { Container,Carousel, Row, Col, Card, Form} from "react-bootstrap"
 import { donateinfo, donatenow } from "../data/data"
-
-
+import { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 function Donate(){
+  const nav = useNavigate();
 
+const[Amount,setAmount] = useState('')
+  function donateamount(){
+
+    console.log("donate");
+    nav('/payment',{state:Amount})
+  }
     return(
         <>
     <Container fluid>   
@@ -79,11 +86,11 @@ function Donate(){
                           <img src= {require('../img/children/childs.webp')}/>
                           <div class="input-group  w-20 " >
                              <div class="input-group-text">Rs.</div>
-                             <Form.Control type="text" placeholder="Other Amount" />
+                             <Form.Control type="text" placeholder="Other Amount"  value={Amount} onChange={d=>setAmount(d.target.value)}/>
                             </div>
                               <Col style={{padding: "3%"}}>
                             <div class="d-grid gap-3 col-8 mx-auto ">
-                                <button class="btn btn-success btn-lg" type="button">Donate Now</button>
+                                <button class="btn btn-success btn-lg" type="button" onClick={donateamount}>Donate Now</button>
                           </div>
                           <p style={{padding: "3%"}}>"YOUR CONTRIBUTIONS ARE ELIGIBLE FOR UPTO 50% TAX BENEFIT UNDER SECTION 80G AS SMILE FOUNDATION IS REGISTERED AS NON PROFIT ORGANIZATION"
                                 PAN: AACTS7973G | 80G NUMBER: AACTS7973GF20210</p>

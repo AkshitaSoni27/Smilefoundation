@@ -114,6 +114,7 @@
     position: relative;
     /* bottom:20px; */
     
+    
 }
 .partner-img{
     width: 100px;
@@ -124,6 +125,7 @@
 }
 .partner-box{
     background-color:#b2d3d1;
+   
 }
  
 .award-box{
@@ -187,4 +189,7 @@
 .img-thumbnail:hover{
     transform: scale(1.1);
     background-color: #76c04d;} 
+    .ml-20{
+        margin-left: 100px;
+    }
 

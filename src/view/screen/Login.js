@@ -26,9 +26,10 @@ function Login(){
           if(success){
           alert(message)
        console.log(data);
-         localStorage.setItem("user",true)
+         localStorage.setItem("user",email)
          
           nav("/")
+          window.location.reload()
           }
           else{
             alert(message)
@@ -64,7 +65,7 @@ function Login(){
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" onClick={submitlogin}>
-          Submit
+         Login
         </Button>
       </Form>
         </Col>

@@ -226,9 +226,9 @@ function Home(){
                partners.map(function(d){
                     return(
                         <>  
-                          <Col md={6} lg={3} className="partner-box">
-                          <marquee direction = "up">
-                           <img src={d.image} className="partner-img"/>
+                          <Col md={6} lg={3} className="partner-box ">
+                          <marquee direction = "up" className="">
+                           <img src={d.image} className="partner-img text-align-center"/>
                           
                            </marquee>
                           </Col>     
@@ -378,11 +378,11 @@ function Home(){
 
          </Row>
     
-            <Row>
+            {/* <Row>
               <div className="contact-footer">
                  
               </div>
-            </Row>
+            </Row> */}
     </Container>
         </>
     )

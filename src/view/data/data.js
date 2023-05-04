@@ -18,9 +18,8 @@ export var menu=[
     {id:3,name:"Work"},
     {id:4,name:"Involved"},
     {id:5,name:"Contact"},
-    {id:6,name:"Register"},
-    {id:7,name:"Login"},
-    {id:8,name:"Donate"}
+    
+   
 
 ]
 

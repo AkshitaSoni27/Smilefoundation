@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Link,useNavigate} from 'react-router-dom'
 import Home from './view/screen/Home';
 import About from './view/screen/About';
 import Register from './view/screen/Register';
@@ -10,22 +10,48 @@ import Donate from './view/screen/Donate';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container,Row,Col, Navbar, NavDropdown, Nav, Form, Button, Carousel} from "react-bootstrap"
 import './view/style/style.css'
+import { useState } from 'react';
 import {menu} from './view/data/data'
+import Payment from './view/screen/Payment';
 function App() {
+  const nav = useNavigate();
+  const[user,setUser] = useState(localStorage.getItem('user'))
   console.log(menu);
+
+  function logout(){
+console.log("logout");
+    localStorage.clear()
+    nav('/')
+    window.location.reload();
+  }
+
+
+  function donate(){
+
+    console.log("donate");
+    if(user){
+      nav('/Donate')
+    }else{
+
+      nav("/login")
+      window.location.reload()
+    }
+  }
   return (
-    <BrowserRouter>
-      <Navbar bg="light" expand="lg">
+    <>
+
+
+<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="nav-content"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="/">Home</Nav.Link>
+        
+        <Nav className="me-auto">
+          <img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>
+          </Nav>
+         
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav ">
+          <Nav className="me-auto ml-20">
+          <Nav.Link href="/">Home</Nav.Link>
             {
               menu.map(function(d){
                 return(
@@ -33,34 +59,26 @@ function App() {
                 )
               })
             }
-            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
-            {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
-          </Nav>
-          <Form className="d-flex">
-           {/*  <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            /> */}
-            <Button variant="success" size='lg' className='donate-button'>Donate Now!</Button>
-          </Form>
+            {
+             !user?<><Nav.Link href="/register">Register</Nav.Link>
+             <Nav.Link href="/login">Login</Nav.Link></>: <Form className="d-flex   ">
+            <Button variant="danger" size='lg' className='donate-button' onClick={logout}>Logout</Button>
+         </Form>
+            }
+             </Nav>
+          <Nav className='me-auto '>
+         <Form className="d-flex   ">
+            <Button variant="success" size='lg' className='donate-button' onClick={donate} >Donate Now!</Button>
+         </Form>
+        
+         </Nav>
+          
         </Navbar.Collapse>
-
-
+       
       </Container>
     </Navbar>
+
+
        <Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/About' element={<About/>}/>
@@ -68,11 +86,18 @@ function App() {
          <Route path='/Work' element={<Work/>}/>
          <Route path='/Involved' element={<Involved/>}/>
          <Route path='/Contact' element={<Contact/>}/>
-         <Route path='/Login' element={<Login/>}/>
+     
          <Route path='/Donate' element={<Donate/>}/>
+         <Route path='/payment' element={<Payment/>}/>
+         {!user?<>
+         <Route path='/Register' element={<Register/>}/>
+         <Route path='/Login' element={<Login/>}/>
+         </>
+        :null}
+         <Route path="*" element={<Home />} />
        </Routes>
   
-        {/* <Container fluid>
+        <Container fluid>
           <footer className="bg-dark text-white pt-5 pb-4">
              <div className="container text-center text-md-left">
                 <div className="row text-center text-md-left">
@@ -82,14 +107,14 @@ function App() {
                 </div>
              </div>
           </footer>
-        </Container> */}
+        </Container>
 
   
   
   
   
   
-    </BrowserRouter>
+    </>
   
   );
 }
