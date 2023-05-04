@@ -31,6 +31,11 @@ console.log(pay);
        <Form.Control type="email" placeholder="Account Holder Name" />
        
      </Form.Group>
+     <Form.Group className="mb-3" controlId="formBasicEmail">
+       
+       <Form.Control type="text" value={`Rs.${pay}`} />
+       
+     </Form.Group>
 
       <Button variant="primary" >
         submit
