@@ -13,6 +13,7 @@ import './view/style/style.css'
 import { useState } from 'react';
 import {menu} from './view/data/data'
 import Payment from './view/screen/Payment';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
 function App() {
   const nav = useNavigate();
   const[user,setUser] = useState(localStorage.getItem('user'))
@@ -40,17 +41,58 @@ console.log("logout");
   return (
     <>
 
-
-<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Container fluid>
-        
-        <Nav className="me-auto">
-          <img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>
-          </Nav>
-         
+<Container fluid >
+  <Row>
+    <Col>
+    <marquee width="100%" direction="left" className="bg-dark text-light">
+This is a sample scrolling text that has scrolls texts to left.
+</marquee>
+    </Col>
+  </Row>
+<Row>
+  <Col> 
+  <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Container>
+        <Navbar.Brand href="#home"> <img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+            {
+              menu.map(function(d){
+                return(
+                  <Nav.Link href={`/${d.name}`}>{d.name}</Nav.Link>
+                )
+              })
+            }
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets" className='bg-success text-light'>Donate Now!</Nav.Link>
+            <NavDropdown title={<BsFillPersonLinesFill size={30}/>} style={{marginRight:50}} id="collasible-nav-dropdown">
+            {
+             !user?<><Nav.Link href="/register">Register</Nav.Link>
+             <Nav.Link href="/login">Login</Nav.Link></>: <Form className="">
+            <Button variant="danger" size='lg' className='donate-button' onClick={logout}>Logout</Button>
+         </Form>
+            }
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  </Col>
+</Row>
+  {/* <Row xs  >
+    <Col sm={4} md={4}lg={2}> 
+      <img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>
+    </Col>
+    <Col xs sm={2}md={6} lg={6} className='mt-20'>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className=' text-align-end justify-content-end'>
+      <Container fluid>
+       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav ">
-          <Nav className="me-auto ml-20">
+          <Nav className=" bg-primary w-75">
           <Nav.Link href="/">Home</Nav.Link>
             {
               menu.map(function(d){
@@ -61,22 +103,30 @@ console.log("logout");
             }
             {
              !user?<><Nav.Link href="/register">Register</Nav.Link>
-             <Nav.Link href="/login">Login</Nav.Link></>: <Form className="d-flex   ">
+             <Nav.Link href="/login">Login</Nav.Link></>: <Form className="">
             <Button variant="danger" size='lg' className='donate-button' onClick={logout}>Logout</Button>
          </Form>
             }
-             </Nav>
-          <Nav className='me-auto '>
-         <Form className="d-flex   ">
+        
+
+        <Form className="">
             <Button variant="success" size='lg' className='donate-button' onClick={donate} >Donate Now!</Button>
          </Form>
-        
-         </Nav>
-          
+      </Nav>
         </Navbar.Collapse>
-       
-      </Container>
-    </Navbar>
+         </Container>
+    </Navbar></Col>
+    <Col className='mt-20 bg-primary' sm={2} md={2} lg={4}>
+      <NavDropdown eventKey={ 3 } id="profile-dropdown">
+        <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
+      </NavDropdown></Col>
+  </Row> */}
+</Container>
+
 
 
        <Routes>
