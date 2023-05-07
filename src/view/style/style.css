@@ -12,16 +12,22 @@
 }
 
 .aboutimg{
-    padding: 5%;
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .aboutheading{
-   margin-top: 10%;
+   margin-top: 50px;
    text-align: center;                    
 }
 .abouttext{
-    padding: 20px;
-    font-size: 20px;
+   
+    font-size: 18px;
+    margin-top: 20px;
+    align-items: center;
     text-align: center;
     
 }
@@ -34,6 +40,9 @@
 }
 .impact-img{
     opacity: .7;
+    width: 100%;
+
+
 }
 
 .pro-heading{
@@ -189,7 +198,64 @@
     }
     .donate-button{
 
-        width: 200px;
+        width: 100%;
+        margin-top: 10px;
         
     }
 
+    .loader{
+
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .loader1{
+        width: 300px;
+        height: 300px;
+        background-color: #76c04d;
+    position: relative;
+    margin: auto;
+  
+       
+    }
+    .menu-text{
+        margin-left: 15%;
+    }
+    .menu-text-color{
+        font-size: 20px;
+        color: black;
+        border-bottom:2px solid #76c04d;
+    }
+    .menu-text-color1{
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+    .menu-text-color:hover{
+
+        border-bottom:2px solid #76c04d;
+    }
+    .impact-div{
+        width: 100%;
+     position: relative; 
+        background-color: #e6f1e2;
+        justify-content: center;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .impact-div-over{
+        position: absolute;
+        top: 50px;
+        width: 80%;
+        left: 10%;
+        bottom: 50px;
+        background-color: aqua;
+        z-index: 100;
+    }

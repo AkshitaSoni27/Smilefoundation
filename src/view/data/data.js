@@ -13,11 +13,11 @@ export var social=[
 export var logo=[require('../img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')]
 
 export var menu=[
-   
-    {id:2,name:"About",sub:["sub1"]},
-    {id:3,name:"Work"},
-    {id:4,name:"Involved"},
-    {id:5,name:"Contact"},
+   {id:3,name:"Home",link:"/"},
+    {id:2,name:"About",link:'/About',sub:["sub1"]},
+    {id:3,name:"Work",link:"/Work"},
+    {id:4,name:"Involved",link:"/Involved"},
+    {id:5,name:"Contact",link:"/Contact"},
     
    
 

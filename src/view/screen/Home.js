@@ -1,7 +1,7 @@
 import { Container,Row,Col, Navbar, NavDropdown, Nav, Form, Button, Carousel, Figure , Card} from "react-bootstrap"
 
 import {about, titleimpact, impactbg, titleprogram, programmes, titlegoals, goals, titlecause,cause, titlepartner,partners, smilestone, titlecertified, certified, titledonatiors, donatiors, titlevolunteer, volunteer, awards} from '../data/data'
-
+import CountUp from 'react-countup';
 
 function Home(){
     return(
@@ -56,15 +56,24 @@ function Home(){
           </Col>
          </Row>
 
-         <Row>
+         <Row >
             {
                 about.map(function(d){
                     return(
                         <>
-                        <Col> <img src={d.img} className="aboutimg"/></Col>
-                        <Col> 
-                        <h1 className="aboutheading"> {d.name}</h1>
+                        
+                          <Col>
+
+                          <h1 className="aboutheading"> {d.name}</h1>
+                        <Row>
+                        <Col lg={6} className="aboutimg"> 
+                        <img src={d.img} className="aboutimg"/>
+                        </Col>
+                        <Col lg={6} className="aboutimg"> 
+                      
                         <p  className="abouttext" >{d.info}</p> 
+                        </Col>
+                        </Row>
                         </Col>
                         </>
                     )
@@ -90,8 +99,48 @@ function Home(){
             {
                 impactbg.map(function(d){
                     return(
-                        <>             
-                           <img src={d.image} className='impact-img'/>
+                        <> <Row >  
+                          <Col>          
+                           <div className="impact-div">
+                          {/*  <img src={d.image} className='impact-img'/> */}
+                          
+                          <Row>
+                            <Col  sm ={6}md={6}lg={3}> <h1 style={{fontSize:70}}><CountUp end={100} />
+                            
+
+                              +</h1>
+                              <h2>LAC</h2>
+                              <p>children and
+                              their families are
+                              impacted every year
+                              </p>
+                              </Col>
+                            <Col sm ={6}md={6}lg={3}>  <h1 style={{fontSize:70}}><CountUp end={2000} />
+                                    +</h1>
+                                    <h2>VILLAGES</h2>
+                                    <p>and slums
+                                    are reached out
+                                    to across the country</p></Col>
+                            <Col sm ={6}md={6}lg={3}>  <h1 style={{fontSize:70}}><CountUp end={400} />
+                                +</h1>
+                                <h2>PROJECTS</h2>
+                                <p>focused on
+                                education, healthcare,
+                                and women empowerment</p></Col>
+                            <Col sm ={6}md={6}lg={3}> <h1 style={{fontSize:70}}><CountUp end={25} />
+
+                      +</h1>
+                      <h2>STATES</h2>
+                      <p>are reached
+                      including the
+                      remotest areas</p></Col>
+                          </Row>
+                          
+                           </div>
+                           </Col>
+                           </Row>
+
+                          
                         </>
                     )
                 })
@@ -196,11 +245,22 @@ function Home(){
                cause.map(function(d){
                     return(
                         <>   
-                          <Col className="cause-box">        
+                         <Col className="certified-box " lg={3} md={6}>     
+                          <Card style={{  }}>  
+                          <Card.Body >
+                          <Card.Img variant="top" src={d.image} className="certified-img"/>
+                            <Card.Title><h3>{d.name}</h3></Card.Title>
+                            <Card.Text>
+                              <p>{d.info}</p>
+                            </Card.Text>
+                          </Card.Body>
+                          </Card>
+                          </Col> 
+                         {/*  <Col className="cause-box" lg={3} md={6}>        
                            <img src={d.image} className="cause-img" />
                            <h1 className="cause-heading">{d.name}</h1>
                            <p className="cause-para">{d.info}</p>
-                          </Col> 
+                          </Col>  */}
                           
                         </>
                     )
@@ -299,8 +359,8 @@ function Home(){
        certified.map(function(d){
         return(
           <>
-          <Col className="certified-box m-2">     
-          <Card style={{ width: '27rem' }}>  
+          <Col className="certified-box " lg={4} md={4}>     
+          <Card style={{  }}>  
           <Card.Body >
           <Card.Img variant="top" src={d.image} className="certified-img"/>
             <Card.Title><h3>{d.name}</h3></Card.Title>
@@ -357,8 +417,8 @@ function Home(){
        donatiors.map(function(d){
         return(
           <>
-          <Col className="donatiors-box m-2">     
-          <Card style={{ width: '20rem'}}>  
+          <Col className="donatiors-box" lg={3} md={6}>     
+          <Card style={{ }}>  
           <Card.Body className="donar-box">
           <Card.Img variant="top" src={d.image}  className="donatiors-img"/>
             <Card.Title><h3>{d.name}</h3></Card.Title>

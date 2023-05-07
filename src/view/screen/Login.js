@@ -44,8 +44,8 @@ function Login(){
     
     return(
     
-        <Container>
-          <h1>Login</h1>
+        <Container className=' m-auto p-3'>
+          <h3 className='bg-primary text-light p-3'>User Login</h3>
          <Row>   
             <Col md={6}>
         <Form>

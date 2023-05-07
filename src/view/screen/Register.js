@@ -46,8 +46,9 @@ nav("/Login")
 }
 return(
     <>
-    <h2 className='header'>Get's Started.</h2>
-<Container>
+   
+<Container className=' m-auto p-3'>
+<h2 className='bg-primary text-light p-3'>Get's Started.</h2>
     <Row>
       {/* <Col>
       {
