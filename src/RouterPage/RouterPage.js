@@ -17,8 +17,13 @@ import { Container,Row,Col, Navbar, NavDropdown, Nav, Form, Button, Carousel} fr
 import { useEffect, useState } from 'react';
 
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 export default function RoutrPage() {
+
+  useEffect(()=> {
+    Aos.init(2000);
+  },[]);
   const nav = useNavigate();
   const[user,setUser] = useState(localStorage.getItem('user'))
   const[menuover,setMenuove] = useState("Home")
@@ -68,7 +73,7 @@ This is a sample scrolling text that has scrolls texts to left.
     </Col>
   </Row>
 <Row>
-  <Col> 
+  <Col data-aos="zoom-in"> 
   <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className=''>
       <Container>
         <Navbar.Brand href="#home"> <img src={require('../view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>

@@ -2,8 +2,14 @@ import { Container,Row,Col, Navbar, NavDropdown, Nav, Form, Button, Carousel, Fi
 
 import {about, titleimpact, impactbg, titleprogram, programmes, titlegoals, goals, titlecause,cause, titlepartner,partners, smilestone, titlecertified, certified, titledonatiors, donatiors, titlevolunteer, volunteer, awards} from '../data/data'
 import CountUp from 'react-countup';
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 function Home(){
+
+  useEffect(() => {
+    Aos.init({duration:2000});
+  }, [])
     return(
         <>
         
@@ -62,7 +68,7 @@ function Home(){
                     return(
                         <>
                         
-                          <Col>
+                          <Col data-Aos="fade-up">
 
                           <h1 className="aboutheading"> {d.name}</h1>
                         <Row>
@@ -99,7 +105,7 @@ function Home(){
             {
                 impactbg.map(function(d){
                     return(
-                        <> <Row >  
+                        <> <Row  data-Aos="fade-up">  
                           <Col>          
                            <div className="impact-div">
                           {/*  <img src={d.image} className='impact-img'/> */}
@@ -245,7 +251,7 @@ function Home(){
                cause.map(function(d){
                     return(
                         <>   
-                         <Col className="certified-box " lg={3} md={6}>     
+                         <Col className="certified-box " lg={3} md={6} data-Aos="fade-up">     
                           <Card style={{  }}>  
                           <Card.Body >
                           <Card.Img variant="top" src={d.image} className="certified-img"/>
@@ -286,7 +292,7 @@ function Home(){
                partners.map(function(d){
                     return(
                         <>  
-                          <Col md={6} lg={3} className="partner-box ">
+                          <Col md={6} lg={3} className="partner-box " data-aos="fade-up">
                           <marquee direction = "up" className="">
                            <img src={d.image} className="partner-img text-align-center"/>
                           
