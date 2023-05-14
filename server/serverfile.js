@@ -98,6 +98,23 @@ app.post('/addtocart',function(req,res){
     res.send(req.body)
  })
 
+
+ app.post('/donate',function(req,res){
+    let result=fs.appendFileSync('./data/donate.json', JSON.stringify(req.body),"utf8")
+    fs.appendFileSync('./data/donate.json', "\n","utf8")
+    
+    let resultdata=""
+    if(!result){
+        resultdata={success:true,message:"Donate successfully"}
+    }
+    else{
+        resultdata={success:false,message:"NOt Donate successfully"}
+        
+    }
+    res.send(resultdata)
+ })
+
+
  
  app.post('/register',function(req,res){
   
@@ -114,6 +131,36 @@ app.post('/addtocart',function(req,res){
     }
     res.send(resultdata)
  })
+
+
+ app.post('/donateshow',function(req,res){
+    let data=fs.readFileSync('./data/donate.json',"utf8")
+    let adddata=[]
+    data.split('\n').forEach(d=>{
+        adddata.push(d)
+    })
+    let add1=[]
+    adddata.map(d=>{
+        if(d!=="")
+        add1.push(JSON.parse(d))
+    })
+    
+    let resultlog=[];
+    add1.map(d=>{
+        if(d.user===req.body.email ){
+            resultlog.push(d)
+        }
+    })
+    if(resultlog){
+        res.send({success:true,message:"Donate show successfully",resultlog})
+    }
+    else{
+        res.send({success:false,message:"user donate not  successfully"})
+    }
+   
+ })
+
+
 
  
  app.post('/login',function(req,res){
