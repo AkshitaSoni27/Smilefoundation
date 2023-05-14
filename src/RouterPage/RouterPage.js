@@ -64,10 +64,10 @@ function menubarhover(d){
   return (
     <>
 
-<Container fluid >
-  <Row>
-    <Col>
-    <marquee width="100%" direction="left" className="bg-dark text-light">
+<Container fluid className='position-fixed'  style={{zIndex: '900'}} >
+  <Row >
+    <Col className="bg-dark">
+    <marquee width="100%" direction="left" className=" text-light">
 This is a sample scrolling text that has scrolls texts to left.
 </marquee>
     </Col>
@@ -107,6 +107,7 @@ This is a sample scrolling text that has scrolls texts to left.
     </Navbar>
   </Col>
 </Row>
+
   {/* <Row xs  >
     <Col sm={4} md={4}lg={2}> 
       <img src={require('./view/img/logo/SMILE-FOUNDATION-LOGO-e1662456150120-1.png')} className='logo'/>
@@ -151,7 +152,13 @@ This is a sample scrolling text that has scrolls texts to left.
   </Row> */}
 </Container>
 
-
+<Container>
+<Row>
+  <Col style={{height:150}}>
+  
+  </Col>
+</Row>
+</Container>
 
        <Routes>
             

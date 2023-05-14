@@ -12,6 +12,11 @@ console.log(pay);
         <>
        <Container className="m-5">
         <Row>
+          <Col>
+          <p className="">Payment</p>
+          </Col>
+        </Row>
+        <Row>
             <Col>
             <div className="w-25 bg-success m-auto rounded p-3 text-light">
             <h4>Bank Account Details</h4>

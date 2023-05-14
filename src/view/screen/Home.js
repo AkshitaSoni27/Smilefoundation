@@ -13,7 +13,7 @@ function Home(){
     return(
         <>
         
-        <Container fluid>
+        <Container fluid style={{zIndex: '10'}}>
            <Row>
                 <Col>
                
